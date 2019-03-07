@@ -33,9 +33,7 @@ class ViewController: UITableViewController {
                     pictures.append(item)
                 }
             }
-            print(pictures)
             pictures = pictures.sorted { $0 < $1 }
-            print(pictures)
         } catch let error {
             print("Unable to get items from directory: \(error)")
         }
