@@ -13,11 +13,16 @@ final class ViewController: UITableViewController, WKNavigationDelegate {
     
     private var websites = [
         "apple.com",
-        "hackingwithswift.com"
+        "hackingwithswift.com",
+        "swiftbysundell.com",
+        "raywenderlich.com",
+        "appcoda.com"
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Easy Browser"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

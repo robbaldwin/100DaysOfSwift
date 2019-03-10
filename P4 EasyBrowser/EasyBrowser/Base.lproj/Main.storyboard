@@ -42,7 +42,9 @@
                             <outlet property="delegate" destination="I3g-lc-IEB" id="kt2-Jk-10t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gPN-rM-CA2"/>
+                    <navigationItem key="navigationItem" id="gPN-rM-CA2">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="oFv-4P-WKH"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L89-dY-Voj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
