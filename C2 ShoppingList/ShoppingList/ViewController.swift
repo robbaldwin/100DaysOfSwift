@@ -37,11 +37,6 @@ final class ViewController: UITableViewController {
     }
     
     @objc
-    private func deleteList() {
-        confirmDelete()
-    }
-    
-    @objc
     private func addItem() {
         let ac = UIAlertController(title: "Add Item", message: nil, preferredStyle: .alert)
         ac.addTextField { (textField) in
@@ -111,7 +106,8 @@ final class ViewController: UITableViewController {
         present(activityVC, animated: true)
     }
     
-    private func confirmDelete() {
+    @objc
+    private func deleteList() {
         let ac = UIAlertController(title: "Delete List?", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
             self?.items.removeAll()
