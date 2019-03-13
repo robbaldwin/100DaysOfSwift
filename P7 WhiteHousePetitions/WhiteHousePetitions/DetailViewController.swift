@@ -47,11 +47,11 @@ class DetailViewController: UIViewController {
         \(issues)<br>
         <i>\(detailItem.body)</i><br><br>
         <b>Status: \(detailItem.status)</b><br><br>
-        Signatures: \(detailItem.signatureCount)<br>
-        Signatures Required: \(detailItem.signatureThreshold)<br>
-        Signatures still needed: \(detailItem.signaturesNeeded)<br>
-        Date created: \(date(from: detailItem.created))<br>
-        Deadline: \(date(from: detailItem.deadline))<br><br>
+        Signatures: <b>\(detailItem.signatureCount)</b><br>
+        Signatures Required: <b>\(detailItem.signatureThreshold)</b><br>
+        Signatures still needed: <b>\(detailItem.signaturesNeeded)</b><br>
+        Date created: <b>\(date(from: detailItem.created))</b><br>
+        Deadline: <b>\(date(from: detailItem.deadline))</b><br><br>
         <a href="\(detailItem.url)">Link to Petition</a>
         </body>
         </html>
