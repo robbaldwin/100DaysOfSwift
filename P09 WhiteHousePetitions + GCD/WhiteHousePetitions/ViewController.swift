@@ -16,6 +16,7 @@ final class ViewController: UITableViewController, UISearchBarDelegate, UISearch
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureNavigationBar()
         configureSearchController()
         performSelector(inBackground: #selector(loadData), with: nil)
@@ -109,6 +110,18 @@ final class ViewController: UITableViewController, UISearchBarDelegate, UISearch
         cell.textLabel?.text = petition.title
         cell.detailTextLabel?.text = petition.body
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIImageView()
+        headerView.backgroundColor = .white
+        headerView.image = UIImage(named: "WhiteHouse")
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
