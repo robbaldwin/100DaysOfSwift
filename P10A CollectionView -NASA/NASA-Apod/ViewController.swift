@@ -96,18 +96,26 @@ final class ViewController: UICollectionViewController {
         if let imageData = photo.imageData {
             cell.imageView.image = UIImage(data: imageData)
         } else {
-            DispatchQueue.global(qos: .userInitiated).async {
+            let cellActivityView = UIActivityIndicatorView(style: .whiteLarge)
+            cellActivityView.center = cell.imageView.center
+            cell.imageView.addSubview(cellActivityView)
+            cellActivityView.startAnimating()
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 if let url = URL(string: photo.url) {
                     if let imageData = try? Data(contentsOf: url) {
                         DispatchQueue.main.async { [weak self] in
                             self?.photos[indexPath.item].imageData = imageData
+                            cellActivityView.stopAnimating()
+                            cellActivityView.removeFromSuperview()
                             cell.imageView.image = UIImage(data: imageData)
                         }
                     } else {
-                        self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
+                        cellActivityView.stopAnimating()
+                        self?.performSelector(onMainThread: #selector(self?.showError), with: nil, waitUntilDone: false)
                     }
                 } else {
-                    self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
+                    cellActivityView.stopAnimating()
+                    self?.performSelector(onMainThread: #selector(self?.showError), with: nil, waitUntilDone: false)
                 }
             }
         }
