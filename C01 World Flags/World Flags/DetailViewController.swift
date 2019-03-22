@@ -20,6 +20,10 @@ class DetailViewController: UIViewController {
         title = selectedCountry.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
         imageView.image = UIImage(named: selectedCountry.code.lowercased())
+        
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.black.cgColor
+        
     }
     
     @objc
