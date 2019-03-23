@@ -128,6 +128,15 @@ final class ViewController: UITableViewController, UIImagePickerControllerDelega
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+
+            let path = getDocumentsDirectory().appendingPathComponent(photos[indexPath.row].filename)
+            
+            do {
+                try FileManager.default.removeItem(at: path)
+            } catch {
+                print("Unable to delete file")
+            }
+            
             photos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             savePhotos()
