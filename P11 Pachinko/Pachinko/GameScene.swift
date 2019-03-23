@@ -183,7 +183,18 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
                     boxParticles.particleColorSequence = nil
                     boxParticles.particleColor = box.fillColor
                     boxParticles.position = CGPoint(x: box.frame.midX, y: box.frame.midY)
-                    addChild(boxParticles)
+                    
+                    let add = SKAction.run { [weak self] in
+                        self?.addChild(boxParticles)
+                    }
+                    
+                    let wait = SKAction.wait(forDuration: 1)
+                    
+                    let remove = SKAction.run {
+                        boxParticles.removeFromParent()
+                    }
+                    
+                    run(SKAction.sequence([add, wait, remove]))
                 }
             }
             score += scoreForBall
@@ -282,7 +293,19 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
                 explodeParticles.particleColor = BallColor.red
             }
             explodeParticles.position = ball.position
-            addChild(explodeParticles)
+            
+            let add = SKAction.run { [weak self] in
+                self?.addChild(explodeParticles)
+            }
+            
+            // Wait for enough time for the particle effect to expire
+            let wait = SKAction.wait(forDuration: 1)
+            
+            let remove = SKAction.run {
+                explodeParticles.removeFromParent()
+            }
+            
+            run(SKAction.sequence([add, wait, remove]))
         }
         
         ball.removeFromParent()
