@@ -66,9 +66,6 @@ final class ViewController: UIViewController, UIImagePickerControllerDelegate, U
         applyProcessing()
     }
     
-    
-    
-    
     @objc
     private func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
