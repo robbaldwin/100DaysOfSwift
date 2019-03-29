@@ -36,6 +36,11 @@ class WhackSlot: SKNode {
     func show(hideTime: Double) {
         if isVisible { return }
         
+        runMudParticleEmitter(isShowingChar: true)
+        
+        charNode.xScale = 1
+        charNode.yScale = 1
+        
         charNode.run(SKAction.moveBy(x: 0, y: 80, duration: 0.05))
         isVisible = true
         isHit = false
@@ -56,7 +61,54 @@ class WhackSlot: SKNode {
     func hide() {
         if !isVisible { return }
         
+        runMudParticleEmitter(isShowingChar: false)
         charNode.run(SKAction.moveBy(x: 0, y: -80, duration: 0.05))
         isVisible = false
+    }
+    
+    func hit() {
+        isHit = true
+        
+        let delay = SKAction.wait(forDuration: 0.25)
+        let hide = SKAction.moveBy(x: 0, y: -80, duration: 0.5)
+        let notVisible = SKAction.run { [weak self] in
+            self?.isVisible = false
+        }
+        let sequence = SKAction.sequence([delay, hide, notVisible])
+        charNode.run(sequence)
+        
+        
+        guard let smoke = SKEmitterNode(fileNamed: "Smoke") else { return }
+        smoke.position = charNode.position
+        
+        let smokeAction = SKAction.sequence([
+            SKAction.run { [weak self] in self?.addChild(smoke) },
+            SKAction.wait(forDuration: 3.0),
+            SKAction.run { smoke.removeFromParent() }])
+        
+        run(smokeAction)
+        
+    }
+    
+    func runMudParticleEmitter(isShowingChar: Bool) {
+        
+        let xPosition = charNode.position.x
+        var yPosition: CGFloat
+        
+        if isShowingChar {
+            yPosition = charNode.position.y + 80
+        } else {
+            yPosition = charNode.position.y
+        }
+        
+        guard let mud = SKEmitterNode(fileNamed: "Mud") else { return }
+        mud.position = CGPoint(x: xPosition, y: yPosition)
+        
+        let mudAction = SKAction.sequence([
+            SKAction.run { [weak self] in self?.addChild(mud) },
+            SKAction.wait(forDuration: 1.0),
+            SKAction.run { mud.removeFromParent() }])
+        
+        run(mudAction)
     }
 }
