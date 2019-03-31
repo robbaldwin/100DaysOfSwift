@@ -35,7 +35,7 @@ final class ViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 2) {
             self.imageView.alpha = 1
         }
     }
