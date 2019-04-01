@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     private var webView: WKWebView!
     

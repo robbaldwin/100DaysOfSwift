@@ -52,5 +52,4 @@ final class ViewController: UITableViewController {
         vc.country = countries[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
-
 }
