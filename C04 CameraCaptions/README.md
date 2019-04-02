@@ -1,5 +1,5 @@
 # Challenge 4 for #100DaysOfSwift
 
-## Camera Captions
+## Milestone: Projects 10-12
 
-Swift 4.2 / Xcode 10.1
+## Camera Captions

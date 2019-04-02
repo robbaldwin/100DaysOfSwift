@@ -1,5 +1,5 @@
 # Challenge 1 for #100DaysOfSwift
 
-## World Flags
+## Milestone: Projects 1-3
 
-Swift 4.2 / Xcode 10.1
+## World Flags

@@ -1,5 +1,5 @@
 # Challenge 3 for #100DaysOfSwift
 
-## Hangman
+## Milestone: Projects 7-9
 
-Swift 4.2 / Xcode 10.1
+## Hangman

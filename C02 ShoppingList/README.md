@@ -1,5 +1,5 @@
 # Challenge 2 for #100DaysOfSwift
 
-## Shopping List
+## Milestone: Projects 4-6
 
-Swift 4.2 / Xcode 10.1
+## Shopping List
