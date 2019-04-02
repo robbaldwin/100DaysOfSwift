@@ -2,4 +2,6 @@
 
 ## SwiftyWords + Animation
 
-Swift 4.2 / Xcode 10.1
+Challenge 1:
+
+Go back to project 8 and make the letter group buttons fade out when they are tapped. We were using the isHidden property, but you'll need to switch to alpha because isHidden is either true or false, it has no animatable values between.

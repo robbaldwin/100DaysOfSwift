@@ -2,4 +2,4 @@
 
 ## Instafilter
 
-Swift 5 / Xcode 10.2
+Base project

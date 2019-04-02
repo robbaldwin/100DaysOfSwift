@@ -2,4 +2,6 @@
 
 ## Guess the Flag + Animation
 
-Swift 4.2 / Xcode 10.1
+Challenge 3:
+
+Go back to project 2 and make the flags scale down with a little bounce when pressed.

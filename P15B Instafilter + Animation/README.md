@@ -2,4 +2,6 @@
 
 ## Instafilter + Animation
 
-Swift 5 / Xcode 10.2
+Challenge 2:
+
+Go back to project 13 and make the image view fade in when a new picture is chosen. To make this work, set the alpha to 0 first.

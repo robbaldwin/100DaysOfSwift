@@ -2,4 +2,6 @@
 
 ## Guess the Flag + Save & Display High Score
 
-Swift 4.2 / Xcode 10.1
+Challenge 2:
+
+Modify project 2 so that it saves the player’s highest score, and shows a special message if their new score beat the previous high score.

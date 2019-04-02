@@ -2,4 +2,6 @@
 
 ## WhiteHousePetitions + Grand Central Dispatch
 
-Swift 4.2 / Xcode 10.1
+Challenge:
+
+Modify project 9 so that your filtering code takes place in the background.

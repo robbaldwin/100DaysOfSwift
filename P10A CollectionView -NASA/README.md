@@ -2,4 +2,4 @@
 
 ## Collection View Challange - Using NASA APOD API
 
-Swift 4.2 / Xcode 10.1
+Personal project based on collections views, GCD, and parsing JSON
