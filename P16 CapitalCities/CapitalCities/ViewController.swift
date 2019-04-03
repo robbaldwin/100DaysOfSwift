@@ -66,20 +66,20 @@ final class ViewController: UIViewController, MKMapViewDelegate {
         
         let identifier = "Capital"
         
-        var annotiationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
 
-        if annotiationView == nil {
-            annotiationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotiationView?.canShowCallout = true
-            annotiationView?.pinTintColor = .blue
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.pinTintColor = .blue
             
             let btn = UIButton(type: .detailDisclosure)
-            annotiationView?.rightCalloutAccessoryView = btn
+            annotationView?.rightCalloutAccessoryView = btn
         } else {
-            annotiationView?.annotation = annotation
+            annotationView?.annotation = annotation
         }
         
-        return annotiationView
+        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
