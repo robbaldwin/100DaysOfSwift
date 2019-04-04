@@ -14,7 +14,7 @@ final class ViewController: UIViewController {
     private var answersLabel: UILabel!
     private var currentAnswer: UITextField!
     private var scoreLabel: UILabel!
-    private var letterButtons: [UIButton] = []
+    private var letterButtons: [LetterButton] = []
     private var activatedButtons: [UIButton] = []
     private var solutions: [String] = []
     private var level: Int = 1
@@ -126,13 +126,17 @@ final class ViewController: UIViewController {
         for row in 0..<4 {
             for col in 0..<5 {
                 let letterButton = LetterButton()
-                letterButton.setTitleColor(.blue, for: .normal)
+                
+                let buttonBlue = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
+                letterButton.setTitleColor(buttonBlue, for: .normal)
+                
+                
                 letterButton.layer.borderWidth = 1.0
                 letterButton.layer.borderColor = UIColor.lightGray.cgColor
                 letterButton.layer.cornerRadius = CGFloat(height / 2)
                 letterButton.clipsToBounds = true
                 letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
-                letterButton.setTitle("WWW", for: .normal)
+                letterButton.setTitle("", for: .normal)
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
@@ -144,7 +148,10 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadLevel()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.loadLevel()
+        }
     }
     
     func loadLevel() {
@@ -174,14 +181,17 @@ final class ViewController: UIViewController {
             }
         }
         
-        cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
-        answersLabel.text = solutionString.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        letterBits.shuffle()
-        
-        if letterBits.count == letterButtons.count {
-            for i in 0 ..< letterButtons.count {
-                letterButtons[i].setTitle(letterBits[i], for: .normal)
+        DispatchQueue.main.async {
+            self.cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
+            self.answersLabel.text = solutionString.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            letterBits.shuffle()
+            
+            if letterBits.count == self.letterButtons.count {
+                for i in 0 ..< self.letterButtons.count {
+                    self.letterButtons[i].setTitle(letterBits[i], for: .normal)
+                }
             }
         }
     }
