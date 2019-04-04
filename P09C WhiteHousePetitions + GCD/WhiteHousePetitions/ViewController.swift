@@ -76,12 +76,19 @@ final class ViewController: UITableViewController, UISearchBarDelegate, UISearch
         
         guard let searchBarText = searchController.searchBar.text?.lowercased() else { return }
         
-        if searchBarText.isEmpty {
-            filteredPetitions = petitions
-        } else {
-            filteredPetitions = petitions.filter { $0.title.lowercased().contains(searchBarText)  }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            
+            guard let petitions = self?.petitions else { return }
+            
+            if searchBarText.isEmpty {
+                self?.filteredPetitions = petitions
+            } else {
+                self?.filteredPetitions = petitions.filter { $0.title.lowercased().contains(searchBarText)  }
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
         }
-        tableView.reloadData()
     }
     
     @objc
