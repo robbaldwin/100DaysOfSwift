@@ -125,7 +125,8 @@ final class ViewController: UIViewController {
         
         for row in 0..<4 {
             for col in 0..<5 {
-                let letterButton = UIButton(type: .system)
+                let letterButton = LetterButton()
+                letterButton.setTitleColor(.blue, for: .normal)
                 letterButton.layer.borderWidth = 1.0
                 letterButton.layer.borderColor = UIColor.lightGray.cgColor
                 letterButton.layer.cornerRadius = CGFloat(height / 2)

@@ -14,6 +14,7 @@
 		9B0294E822393A83006518DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0294E622393A83006518DF /* LaunchScreen.storyboard */; };
 		9B0F716522394A590083FDE1 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F716322394A580083FDE1 /* level2.txt */; };
 		9B0F716622394A590083FDE1 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F716422394A580083FDE1 /* level1.txt */; };
+		9B3DB28C22563A4F000F7C51 /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB28B22563A4F000F7C51 /* LetterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9B0294E922393A83006518DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B0F716322394A580083FDE1 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 		9B0F716422394A580083FDE1 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		9B3DB28B22563A4F000F7C51 /* LetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9B0294E922393A83006518DF /* Info.plist */,
 				9B0F716422394A580083FDE1 /* level1.txt */,
 				9B0F716322394A580083FDE1 /* level2.txt */,
+				9B3DB28B22563A4F000F7C51 /* LetterButton.swift */,
 			);
 			path = SwiftyWords;
 			sourceTree = "<group>";
@@ -102,6 +105,7 @@
 				TargetAttributes = {
 					9B0294D922393A82006518DF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -143,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3DB28C22563A4F000F7C51 /* LetterButton.swift in Sources */,
 				9B0294E022393A82006518DF /* ViewController.swift in Sources */,
 				9B0294DE22393A82006518DF /* AppDelegate.swift in Sources */,
 			);
@@ -299,7 +304,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.SwiftyWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -317,7 +322,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.SwiftyWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
