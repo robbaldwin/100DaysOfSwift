@@ -49,7 +49,7 @@ final class ViewController: UITableViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
             fatalError("Unable to instantiate DetailViewController")
         }
-        vc.country = countries[indexPath.row]
+        vc.countries = countries
         navigationController?.pushViewController(vc, animated: true)
     }
 }

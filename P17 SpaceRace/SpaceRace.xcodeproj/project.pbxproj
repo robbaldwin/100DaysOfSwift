@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B3DB29022574037000F7C51 /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB28F22574037000F7C51 /* Capital.swift */; };
-		9B7C23602251D38D0011B6A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C235F2251D38D0011B6A0 /* AppDelegate.swift */; };
-		9B7C23622251D38D0011B6A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C23612251D38D0011B6A0 /* ViewController.swift */; };
-		9B7C23652251D38D0011B6A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C23632251D38D0011B6A0 /* Main.storyboard */; };
-		9B7C23672251D38F0011B6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C23662251D38F0011B6A0 /* Assets.xcassets */; };
-		9B7C236A2251D38F0011B6A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C23682251D38F0011B6A0 /* LaunchScreen.storyboard */; };
-		9B7C23722251D3B40011B6A0 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C23712251D3B40011B6A0 /* Countries.json */; };
-		9B7C23742251D3D00011B6A0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C23732251D3D00011B6A0 /* Country.swift */; };
-		9B7C23762251D73F0011B6A0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C23752251D73F0011B6A0 /* DetailViewController.swift */; };
+		9BE8434522560DF50027BEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8434422560DF50027BEBB /* AppDelegate.swift */; };
+		9BE8434722560DF50027BEBB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8434622560DF50027BEBB /* GameScene.sks */; };
+		9BE8434B22560DF50027BEBB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8434A22560DF50027BEBB /* GameScene.swift */; };
+		9BE8434D22560DF50027BEBB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8434C22560DF50027BEBB /* GameViewController.swift */; };
+		9BE8435022560DF50027BEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8434E22560DF50027BEBB /* Main.storyboard */; };
+		9BE8435222560DF50027BEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8435122560DF50027BEBB /* Assets.xcassets */; };
+		9BE8435522560DF50027BEBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8435322560DF50027BEBB /* LaunchScreen.storyboard */; };
+		9BE8435D22560E5D0027BEBB /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8435C22560E5C0027BEBB /* explosion.sks */; };
+		9BE8435F22560E630027BEBB /* starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BE8435E22560E630027BEBB /* starfield.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B3DB28F22574037000F7C51 /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
-		9B7C235C2251D38D0011B6A0 /* CountryFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B7C235F2251D38D0011B6A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B7C23612251D38D0011B6A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B7C23642251D38D0011B6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B7C23662251D38F0011B6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B7C23692251D38F0011B6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9B7C236B2251D38F0011B6A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B7C23712251D3B40011B6A0 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
-		9B7C23732251D3D00011B6A0 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		9B7C23752251D73F0011B6A0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9BE8434122560DF50027BEBB /* SpaceRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE8434422560DF50027BEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BE8434622560DF50027BEBB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9BE8434A22560DF50027BEBB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9BE8434C22560DF50027BEBB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9BE8434F22560DF50027BEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BE8435122560DF50027BEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BE8435422560DF50027BEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BE8435622560DF50027BEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BE8435C22560E5C0027BEBB /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		9BE8435E22560E630027BEBB /* starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starfield.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9B7C23592251D38D0011B6A0 /* Frameworks */ = {
+		9BE8433E22560DF50027BEBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,75 +43,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B7C23532251D38D0011B6A0 = {
+		9BE8433822560DF50027BEBB = {
 			isa = PBXGroup;
 			children = (
-				9B7C235E2251D38D0011B6A0 /* CountryFacts */,
-				9B7C235D2251D38D0011B6A0 /* Products */,
+				9BE8434322560DF50027BEBB /* SpaceRace */,
+				9BE8434222560DF50027BEBB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9B7C235D2251D38D0011B6A0 /* Products */ = {
+		9BE8434222560DF50027BEBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B7C235C2251D38D0011B6A0 /* CountryFacts.app */,
+				9BE8434122560DF50027BEBB /* SpaceRace.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B7C235E2251D38D0011B6A0 /* CountryFacts */ = {
+		9BE8434322560DF50027BEBB /* SpaceRace */ = {
 			isa = PBXGroup;
 			children = (
-				9B7C235F2251D38D0011B6A0 /* AppDelegate.swift */,
-				9B7C23612251D38D0011B6A0 /* ViewController.swift */,
-				9B7C23752251D73F0011B6A0 /* DetailViewController.swift */,
-				9B7C23632251D38D0011B6A0 /* Main.storyboard */,
-				9B7C23662251D38F0011B6A0 /* Assets.xcassets */,
-				9B7C23682251D38F0011B6A0 /* LaunchScreen.storyboard */,
-				9B7C236B2251D38F0011B6A0 /* Info.plist */,
-				9B7C23732251D3D00011B6A0 /* Country.swift */,
-				9B7C23712251D3B40011B6A0 /* Countries.json */,
-				9B3DB28F22574037000F7C51 /* Capital.swift */,
+				9BE8434422560DF50027BEBB /* AppDelegate.swift */,
+				9BE8434622560DF50027BEBB /* GameScene.sks */,
+				9BE8434A22560DF50027BEBB /* GameScene.swift */,
+				9BE8434C22560DF50027BEBB /* GameViewController.swift */,
+				9BE8434E22560DF50027BEBB /* Main.storyboard */,
+				9BE8435122560DF50027BEBB /* Assets.xcassets */,
+				9BE8435322560DF50027BEBB /* LaunchScreen.storyboard */,
+				9BE8435622560DF50027BEBB /* Info.plist */,
+				9BE8435C22560E5C0027BEBB /* explosion.sks */,
+				9BE8435E22560E630027BEBB /* starfield.sks */,
 			);
-			path = CountryFacts;
+			path = SpaceRace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B7C235B2251D38D0011B6A0 /* CountryFacts */ = {
+		9BE8434022560DF50027BEBB /* SpaceRace */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B7C236E2251D38F0011B6A0 /* Build configuration list for PBXNativeTarget "CountryFacts" */;
+			buildConfigurationList = 9BE8435922560DF50027BEBB /* Build configuration list for PBXNativeTarget "SpaceRace" */;
 			buildPhases = (
-				9B7C23582251D38D0011B6A0 /* Sources */,
-				9B7C23592251D38D0011B6A0 /* Frameworks */,
-				9B7C235A2251D38D0011B6A0 /* Resources */,
+				9BE8433D22560DF50027BEBB /* Sources */,
+				9BE8433E22560DF50027BEBB /* Frameworks */,
+				9BE8433F22560DF50027BEBB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CountryFacts;
-			productName = CountryFacts;
-			productReference = 9B7C235C2251D38D0011B6A0 /* CountryFacts.app */;
+			name = SpaceRace;
+			productName = SpaceRace;
+			productReference = 9BE8434122560DF50027BEBB /* SpaceRace.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9B7C23542251D38D0011B6A0 /* Project object */ = {
+		9BE8433922560DF50027BEBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Rob Baldwin";
 				TargetAttributes = {
-					9B7C235B2251D38D0011B6A0 = {
+					9BE8434022560DF50027BEBB = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = 9B7C23572251D38D0011B6A0 /* Build configuration list for PBXProject "CountryFacts" */;
+			buildConfigurationList = 9BE8433C22560DF50027BEBB /* Build configuration list for PBXProject "SpaceRace" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,58 +119,58 @@
 				en,
 				Base,
 			);
-			mainGroup = 9B7C23532251D38D0011B6A0;
-			productRefGroup = 9B7C235D2251D38D0011B6A0 /* Products */;
+			mainGroup = 9BE8433822560DF50027BEBB;
+			productRefGroup = 9BE8434222560DF50027BEBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B7C235B2251D38D0011B6A0 /* CountryFacts */,
+				9BE8434022560DF50027BEBB /* SpaceRace */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9B7C235A2251D38D0011B6A0 /* Resources */ = {
+		9BE8433F22560DF50027BEBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B7C236A2251D38F0011B6A0 /* LaunchScreen.storyboard in Resources */,
-				9B7C23672251D38F0011B6A0 /* Assets.xcassets in Resources */,
-				9B7C23722251D3B40011B6A0 /* Countries.json in Resources */,
-				9B7C23652251D38D0011B6A0 /* Main.storyboard in Resources */,
+				9BE8435F22560E630027BEBB /* starfield.sks in Resources */,
+				9BE8435022560DF50027BEBB /* Main.storyboard in Resources */,
+				9BE8434722560DF50027BEBB /* GameScene.sks in Resources */,
+				9BE8435222560DF50027BEBB /* Assets.xcassets in Resources */,
+				9BE8435D22560E5D0027BEBB /* explosion.sks in Resources */,
+				9BE8435522560DF50027BEBB /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9B7C23582251D38D0011B6A0 /* Sources */ = {
+		9BE8433D22560DF50027BEBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B7C23622251D38D0011B6A0 /* ViewController.swift in Sources */,
-				9B3DB29022574037000F7C51 /* Capital.swift in Sources */,
-				9B7C23742251D3D00011B6A0 /* Country.swift in Sources */,
-				9B7C23602251D38D0011B6A0 /* AppDelegate.swift in Sources */,
-				9B7C23762251D73F0011B6A0 /* DetailViewController.swift in Sources */,
+				9BE8434B22560DF50027BEBB /* GameScene.swift in Sources */,
+				9BE8434D22560DF50027BEBB /* GameViewController.swift in Sources */,
+				9BE8434522560DF50027BEBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B7C23632251D38D0011B6A0 /* Main.storyboard */ = {
+		9BE8434E22560DF50027BEBB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9B7C23642251D38D0011B6A0 /* Base */,
+				9BE8434F22560DF50027BEBB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9B7C23682251D38F0011B6A0 /* LaunchScreen.storyboard */ = {
+		9BE8435322560DF50027BEBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9B7C23692251D38F0011B6A0 /* Base */,
+				9BE8435422560DF50027BEBB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9B7C236C2251D38F0011B6A0 /* Debug */ = {
+		9BE8435722560DF50027BEBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,7 +239,7 @@
 			};
 			name = Debug;
 		};
-		9B7C236D2251D38F0011B6A0 /* Release */ = {
+		9BE8435822560DF50027BEBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -294,36 +294,36 @@
 			};
 			name = Release;
 		};
-		9B7C236F2251D38F0011B6A0 /* Debug */ = {
+		9BE8435A22560DF50027BEBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47UHAV43Z9;
-				INFOPLIST_FILE = CountryFacts/Info.plist;
+				INFOPLIST_FILE = SpaceRace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.CountryFacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.SpaceRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9B7C23702251D38F0011B6A0 /* Release */ = {
+		9BE8435B22560DF50027BEBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47UHAV43Z9;
-				INFOPLIST_FILE = CountryFacts/Info.plist;
+				INFOPLIST_FILE = SpaceRace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.CountryFacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbaldwin.SpaceRace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -333,25 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B7C23572251D38D0011B6A0 /* Build configuration list for PBXProject "CountryFacts" */ = {
+		9BE8433C22560DF50027BEBB /* Build configuration list for PBXProject "SpaceRace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B7C236C2251D38F0011B6A0 /* Debug */,
-				9B7C236D2251D38F0011B6A0 /* Release */,
+				9BE8435722560DF50027BEBB /* Debug */,
+				9BE8435822560DF50027BEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B7C236E2251D38F0011B6A0 /* Build configuration list for PBXNativeTarget "CountryFacts" */ = {
+		9BE8435922560DF50027BEBB /* Build configuration list for PBXNativeTarget "SpaceRace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B7C236F2251D38F0011B6A0 /* Debug */,
-				9B7C23702251D38F0011B6A0 /* Release */,
+				9BE8435A22560DF50027BEBB /* Debug */,
+				9BE8435B22560DF50027BEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9B7C23542251D38D0011B6A0 /* Project object */;
+	rootObject = 9BE8433922560DF50027BEBB /* Project object */;
 }

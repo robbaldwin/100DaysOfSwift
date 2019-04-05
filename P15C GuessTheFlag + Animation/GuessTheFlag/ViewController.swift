@@ -43,9 +43,9 @@ final class ViewController: UIViewController {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         
-        button1.transform = .identity
-        button2.transform = .identity
-        button3.transform = .identity
+//        button1.transform = .identity
+//        button2.transform = .identity
+//        button3.transform = .identity
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
