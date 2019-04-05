@@ -6,26 +6,59 @@
 //  Copyright © 2019 Rob Baldwin. All rights reserved.
 //
 
+import MapKit
 import UIKit
 import WebKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController, MKMapViewDelegate {
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var webView: WKWebView!
 
     var country: Country!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mapView.delegate = self
+
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
-        title = "Country Facts"
+        title = country.name
         
-        webView = WKWebView()
-        view = webView
+        loadFlag()
+        loadMap()
         webView.loadHTMLString(HTMLString(), baseURL: nil)
     }
     
-    private func HTMLString() -> String {
+    func loadFlag() {
+        imageView.layer.borderColor = UIColor.darkGray.cgColor
+        imageView.layer.borderWidth = 1
+        imageView.image = UIImage(named: country.alpha2Code.lowercased())
+    }
+
+    func loadMap() {
+        guard
+            let latitude = country.latlng.first,
+            let longitude = country.latlng.last
+            else { return }
+
+        let centreCoordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        // Set Annotation
+        let annotation = CountryAnnotation(name: country.name, coordinate: centreCoordinates )
+        mapView.addAnnotation(annotation)
+        
+        // Centre map on location
+        let region = MKCoordinateRegion(
+            center: centreCoordinates,
+            latitudinalMeters: 3_000_000,
+            longitudinalMeters: 3_000_000)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func HTMLString() -> String {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
@@ -41,7 +74,6 @@ final class DetailViewController: UIViewController {
         </style>
         </head>
         <body>
-        <h1>\(country.name)</h1>
         Capital: <b>\(country.capital)</b><br>
         Region: <b>\(country.region)</b><br>
         SubRegion: <b>\(country.subregion)</b><br>
@@ -89,29 +121,18 @@ final class DetailViewController: UIViewController {
         for zone in country.timezones {
             html.append("<b>\(zone)</b>, ")
         }
-        
-        html.append("""
-            <br><h2>Translations: </h2>
-            German: <b>\(country.translations.de ?? "")</b><br>
-            Spanish: <b>\(country.translations.es ?? "")</b><br>
-            French: <b>\(country.translations.fr ?? "")</b><br>
-            Japanese: <b>\(country.translations.ja ?? "")</b><br>
-            Italian: <b>\(country.translations.it ?? "")</b><br>
-            Breton: <b>\(country.translations.br ?? "")</b><br>
-            Portuguese: <b>\(country.translations.pt ?? "")</b><br>
-            Dutch: <b>\(country.translations.nl ?? "")</b><br>
-            Croation: <b>\(country.translations.hr ?? "")</b><br>
-            Persian: <b>\(country.translations.fa ?? "")</b><br>
-            """)
-        
+
         html.append("</body></html>")
         
         return html
     }
 
     @objc
-    private func shareButtonTapped() {
-        let activityVC = UIActivityViewController(activityItems: [HTMLString()], applicationActivities: [])
+    func shareButtonTapped() {
+        var html = "<h2>\(country.name)</h2>"
+        html += HTMLString()
+        
+        let activityVC = UIActivityViewController(activityItems: [html], applicationActivities: [])
         present(activityVC, animated: true, completion: nil)
     }
 }
