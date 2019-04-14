@@ -17,7 +17,6 @@
 		9B301FD6225BAA900089DA97 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B301FD3225BAA900089DA97 /* empty.wav */; };
 		9B301FD7225BAA900089DA97 /* reload.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B301FD4225BAA900089DA97 /* reload.wav */; };
 		9B301FD8225BAA900089DA97 /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B301FD5225BAA900089DA97 /* shot.wav */; };
-		9B301FDA225BBB9E0089DA97 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B301FD9225BBB9E0089DA97 /* Target.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		9B301FD3225BAA900089DA97 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
 		9B301FD4225BAA900089DA97 /* reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = reload.wav; sourceTree = "<group>"; };
 		9B301FD5225BAA900089DA97 /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
-		9B301FD9225BBB9E0089DA97 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 				9B301FD3225BAA900089DA97 /* empty.wav */,
 				9B301FD4225BAA900089DA97 /* reload.wav */,
 				9B301FD5225BAA900089DA97 /* shot.wav */,
-				9B301FD9225BBB9E0089DA97 /* Target.swift */,
 			);
 			path = ShootingGallery;
 			sourceTree = "<group>";
@@ -159,7 +156,6 @@
 			files = (
 				9B301FC2225BA45D0089DA97 /* GameScene.swift in Sources */,
 				9B301FC4225BA45D0089DA97 /* GameViewController.swift in Sources */,
-				9B301FDA225BBB9E0089DA97 /* Target.swift in Sources */,
 				9B301FBC225BA45D0089DA97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
