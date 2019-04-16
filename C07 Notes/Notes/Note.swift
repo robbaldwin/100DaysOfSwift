@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Using a class rather than a struct as 'selectedNote' in DetailVC is passed around as a reference type
+
 class Note: Codable {
     
     var id: String
@@ -21,19 +23,23 @@ class Note: Codable {
     }
     
     func title() -> String {
-        
+    
+        // In Notes, "New Note" is displayed where there is no text
         guard !text.isEmpty else {
             return "New Note"
         }
         
+        // In Notes, the first 45(ish) characters are displayed as the title in the cell and truncated.
         var length: Int
 
+        // If the length of the text is <= 45 characters, get the actual length for the title, or use 45 as a maximum length
         if text.count <= 45 {
             length = text.count
         } else {
             length = 45
         }
         
+        // If there are any line breaks in the title, return only the text up to the first line break
         let firstCharacters = text.prefix(length)
         if firstCharacters.contains("\n") {
             let lines = firstCharacters.components(separatedBy: "\n")
@@ -45,6 +51,8 @@ class Note: Codable {
     
     func subTitle() -> String {
         
+        // If there is a line break in the first 45 characters, uses the second line as the subTitle
+        // If there is no line break, "No additional text" is displayed, as in the Notes App
         if text.count <= 45 {
             if text.contains("\n") {
                 let lines = text.components(separatedBy: "\n")
@@ -53,6 +61,7 @@ class Note: Codable {
                 return "No additional text"
             }
         } else {
+            // If text is over 45 characters, start the subTitle after the first space beyond 45 characters, so as not to split words
             let startIndex = text.index(text.startIndex, offsetBy: 45)
             let bodyText = String(text[startIndex...])
             
@@ -67,8 +76,12 @@ class Note: Codable {
     
     func dateString() -> String {
 
-        let dateFormatter = DateFormatter()
+        // Notes App, displays:
+        // - todays notes as the time only HH:mm
+        // - yesterdays notes as 'Yesterday'
+        // - anything older as dd/MM/YYYY
         
+        let dateFormatter = DateFormatter()
         let calendar = Calendar.current
 
         if calendar.isDateInToday(date) {
@@ -82,6 +95,7 @@ class Note: Codable {
         }
     }
 
+    // Sample data to populate app on first launch, with notes at different times to show all dateString combinations
     static func sampleData() -> [Note] {
         var notes: [Note] = []
         

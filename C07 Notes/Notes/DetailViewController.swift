@@ -17,7 +17,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     var selectedNote: Note!
     var shareButton: UIBarButtonItem!
     var doneButton: UIBarButtonItem!
-    var editingInProgress: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +29,18 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        // This is called when the Back button is tapped, and makes sure that the current data is saved
         save()
     }
     
     func configureUI() {
         
+        // Configures the Nav Bar buttons (top)
         shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         navigationItem.rightBarButtonItems = [shareButton]
         
+        // Configures the ToolBar buttons (bottom)
         let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteTapped))
         let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeTapped))
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -46,6 +48,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     }
     
     func configureKeyboardObservers() {
+        
+        // To resize the textView when the keyboard shows or hides
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -71,6 +75,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         updateTextView()
         
+        // In the Notes App, the keyboard is automatically activated if the note text is empty.
         if selectedNote.text.isEmpty {
             textView.becomeFirstResponder()
         }
@@ -78,6 +83,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     func updateTextView() {
 
+        // Increases the default line spacing in the textView, and sets the font size and color
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
         let attributes = [
@@ -129,13 +135,16 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     @objc
     func doneTapped() {
         textView.resignFirstResponder()
-        
     }
     
     @objc
     func deleteTapped() {
+        // Finds the index in the 'notes' array for the selectedNote
+        // Gets the index of the next note to be displayed
         if let indexOfNoteToDelete = notes.firstIndex(where: { $0.id == selectedNoteId }) {
             let newIndex = notes.index(after: indexOfNoteToDelete)
+            
+            // Displays the next note if it exists, else pop the VC
             if notes.indices.contains(newIndex) {
                 selectedNote = notes[newIndex]
                 selectedNoteId = selectedNote.id
@@ -143,17 +152,23 @@ class DetailViewController: UIViewController, UITextViewDelegate {
             } else {
                 navigationController?.popViewController(animated: true)
             }
+            // Finally, remove the deleted object from the 'notes' array
             notes.remove(at: indexOfNoteToDelete)
         }
     }
     
     @objc
     func composeTapped() {
+        // Like in the Notes App, the user can create a new note when already displaying an existing note, by tapped the compose button
+        
+        // Save the existing data and create a new note
         save()
         let newNote = Note(id: UUID().uuidString, text: "", date: Date())
         notes.append(newNote)
         selectedNoteId = newNote.id
         selectedNote = newNote
+        
+        // Display the new note and activate the keyboard
         updateTextView()
         textView.becomeFirstResponder()
     }

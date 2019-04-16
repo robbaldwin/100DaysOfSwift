@@ -26,6 +26,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // loadData & filterResults are called in viewWillAppear as they need to be called on first load AND when returning back each time from the DetailVC
         loadData()
         filterResults()
     }
@@ -39,31 +40,38 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
                 print("Failed to load notes")
             }
         } else {
+            // Load sample notes on first load of App only
             notes = Note.sampleData()
             save()
         }
     }
     
     func configureUI() {
+        
+        // Background texture as used in the Notes App
         let backgroundImage = UIImage(named: "background")
         let imageView = UIImageView(image: backgroundImage)
         tableView.backgroundView = imageView
+        
+        // Match rowHeight in Notes App
         tableView.rowHeight = 73.0
 
-        title = " Notes"
+        title = "Notes"
         navigationController?.navigationBar.prefersLargeTitles = true
 
+        // Match editButton in Notes App, including heavier font
         editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
         editButton.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .medium)], for: .normal)
-        
         navigationItem.rightBarButtonItem = editButton
         
+        // Match the small "X Notes" label in toolBar
         noteCountLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 21))
         noteCountLabel.font = UIFont.systemFont(ofSize: 11)
         noteCountLabel.textColor = UIColor(named: "titleColor")
-
         noteCountLabel.center = CGPoint(x: view.frame.midX, y: view.frame.height)
         noteCountLabel.textAlignment = .center
+        
+        // Configure the toolBar at the bottom of the screen
         let toolBarText = UIBarButtonItem(customView: noteCountLabel)
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeTapped))
@@ -75,11 +83,14 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        
+        // Match 'Cancel' button in Notes App searchBar
         let cancelButton = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         cancelButton.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor(named: "tintColor")!,
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
             ], for: .normal)
+        
         navigationItem.searchController = searchController
         self.definesPresentationContext = true
     }
@@ -109,6 +120,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     
     @objc
     func composeTapped() {
+        // Create a new note, and use the ID as the current selectedNoteID, before segue to the DetailVC.  This is necessary as selecting as existing note passes the ID to the DetailVC.
         let note = Note(id: UUID().uuidString, text: "", date: Date())
         notes.append(note)
         save()
@@ -118,6 +130,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     
     @objc
     func editTapped() {
+        // Toggles editing mode and button title
         if tableView.isEditing {
             tableView.setEditing(false, animated: true)
             editButton.title = "Edit"
@@ -147,6 +160,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
             fatalError("Unable to dequeue a NoteCell")
         }
         
+        // Set cell selection color to match the Notes App selection
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(named: "cellSelection")
         cell.selectedBackgroundView = backgroundView
@@ -168,6 +182,10 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         if editingStyle == .delete {
             
             let selectedNoteId = filteredNotes[indexPath.row].id
+            
+            // As we are using the 'filteredNotes' array to populate the tableView, we also need to find the index of the item to delete in the full 'notes' array.
+            // This searches the 'notes' array for the ID, and then removes the object from both arrays, and then deletes that one row from the tableView.
+            // We could just remove the object from 'notes' and call filterResults() which would call reloadData(), but deleting the individual row gives a much nicer animation
             
             if let indexOfNoteToDelete = notes.firstIndex(where: { $0.id == selectedNoteId }) {
                 filteredNotes.remove(at: indexPath.row)
