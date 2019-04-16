@@ -68,6 +68,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         }
         
         if let note = notes.first(where: { $0.id == selectedNoteId }) {
+            // 'selectedNote' is a reference to an object within the notes array.  This is why Note is a class (reference type), rather than a struct (value type).
             selectedNote = note
         } else {
             print("Selected note not found")
@@ -95,6 +96,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     }
     
     func save() {
+        
+        // 'selectedNote' is a reference to an object within the notes array.  This is why Note is a class (reference type), rather than a struct (value type).  Here the current text from the textView is stored back into the selectedNote which is a reference to an object in the notes array, which is therefore automatically updated - and the 'notes' array can just be saved
         
         if let text = textView.text {
             selectedNote.text = text
