@@ -74,7 +74,6 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Search"
         let cancelButton = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         cancelButton.setTitleTextAttributes([
