@@ -76,7 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let ac = UIAlertController(title: "Detected Beacon", message:
             """
-            Identifer: \(beacons[beacon.proximityUUID] ?? "No Identifier")\n
+            Identifier: \(beacons[beacon.proximityUUID] ?? "No Identifier")\n
             UUID: \(beacon.proximityUUID)
             """,
             preferredStyle: .alert)
