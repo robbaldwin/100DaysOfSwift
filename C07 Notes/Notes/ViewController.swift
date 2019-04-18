@@ -53,6 +53,9 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         let imageView = UIImageView(image: backgroundImage)
         tableView.backgroundView = imageView
         
+        // Hides seperator lines on unused cells
+        tableView.tableFooterView = UIView()
+        
         // Match rowHeight in Notes App
         tableView.rowHeight = 73.0
 
