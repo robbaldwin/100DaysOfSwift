@@ -10,8 +10,8 @@ import PlaygroundSupport
 // SHOW ASSISTANT EDITOR!
 
 // Setup Live View
-let container = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-container.backgroundColor = .white
+let container = UIView(frame: CGRect(x: 0, y: 0, width: 500, height: 250))
+container.backgroundColor = .darkGray
 PlaygroundPage.current.liveView = container
 
 // Challenge 1: Extend UIView so that it has a bounceOut(duration:) method that uses animation to scale its size down to 0.0001 over a specified number of seconds.
@@ -24,9 +24,9 @@ extension UIView {
     }
 }
 
-let view = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
+let view = UIView(frame: CGRect(x: 150, y: 25, width: 200, height: 200))
 view.layer.cornerRadius = 100
-view.backgroundColor = .blue
+view.backgroundColor = .red
 container.addSubview(view)
 view.bounceOut(duration: 2.0)
 
