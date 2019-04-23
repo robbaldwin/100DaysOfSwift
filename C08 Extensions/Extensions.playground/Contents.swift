@@ -28,7 +28,7 @@ let view = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
 view.layer.cornerRadius = 100
 view.backgroundColor = .blue
 container.addSubview(view)
-view.bounceOut(duration: 1.0)
+view.bounceOut(duration: 2.0)
 
 // Challenge 2: Extend Int with a times() method that runs a closure as many times as the number is high. For example, 5.times { print("Hello!") } will print “Hello” five times.
 
