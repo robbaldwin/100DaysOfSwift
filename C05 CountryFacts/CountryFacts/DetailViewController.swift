@@ -20,7 +20,7 @@ final class DetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
         title = "Country Facts"
         
-        webView = WKWebView()
+        let webView = WKWebView()
         view = webView
         webView.loadHTMLString(HTMLString(), baseURL: nil)
     }
