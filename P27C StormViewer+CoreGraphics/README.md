@@ -1,11 +1,5 @@
-# Project 3 for #100DaysOfSwift
+# Project 27C for #100DaysOfSwift
 
-## Storm Viewer with UIActivityViewController
+## Core Graphics
 
-The challenges for this project were:
-
-1. Try adding the image name to the list of items that are shared. The activityItems parameter is an array, so you can add strings and other things freely. Note: Facebook won’t let you share text, but most other share options will.
-
-2. Go back to project 1 and add a bar button item to the main view controller that recommends the app to other people.
-
-3. Go back to project 2 and add a bar button item that shows their score when tapped.
+Challenge 3: Go back to project 3 and change the way the selected image is shared so that it has some rendered text on top saying “From Storm Viewer”. This means reading the size property of the original image, creating a new canvas at that size, drawing the image in, then adding your text on top.
