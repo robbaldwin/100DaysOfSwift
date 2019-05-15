@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Project 1: Storm Viewer",
+    "description": "Constants and variables, UITableView, UIImageView, FileManager, storyboards"
+  },
+  {
+    "title": "Project 2: Guess the Flag",
+    "description": "@2x and @3x images, asset catalogs, integers, doubles, floats, operators (+= and -=), UIButton, enums, CALayer, UIColor, random numbers, actions, string interpolation, UIAlertController"
+  },
+  {
+    "title": "Project 3: Social Media",
+    "description": "UIBarButtonItem, UIActivityViewController, the Social framework, URL"
+  },
+  {
+    "title": "Project 4: Easy Browser",
+    "description": "loadView(), WKWebView, delegation, classes and structs, URLRequest, UIToolbar, UIProgressView., key-value observing"
+  },
+  {
+    "title": "Project 5: Word Scramble",
+    "description": "Closures, method return values, booleans, NSRange"
+  },
+  {
+    "title": "Project 6: Auto Layout",
+    "description": "Get to grips with Auto Layout using practical examples and code"
+  },
+  {
+    "title": "Project 7: Whitehouse Petitions",
+    "description": "JSON, Data, UITabBarController"
+  },
+  {
+    "title": "Project 8: Swifty Words",
+    "description": "addTarget(), enumerated(), count, index(of:), property observers, range operators."
+  },
+]
